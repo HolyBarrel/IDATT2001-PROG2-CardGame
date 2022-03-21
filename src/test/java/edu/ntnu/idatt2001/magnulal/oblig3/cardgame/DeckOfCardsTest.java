@@ -1,7 +1,6 @@
 package edu.ntnu.idatt2001.magnulal.oblig3.cardgame;
 
-import edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses.DeckOfCards;
-import edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses.PlayingCard;
+import edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

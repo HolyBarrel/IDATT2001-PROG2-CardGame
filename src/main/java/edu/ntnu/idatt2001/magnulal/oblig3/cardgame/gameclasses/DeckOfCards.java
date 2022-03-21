@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * 52 playing cards (ArrayListPlayingCard deckList)
  * @author ntnu _ further developed by ntnu.stud: magnulal
  * @since 2020-01-10
- * @version 2022-03-20
+ * @version 2022-03-21
  */
 public class DeckOfCards {
     //List of values for possible suits
@@ -35,7 +35,6 @@ public class DeckOfCards {
             }
         }
     }
-
     /**
      * The method picks n cards from the deck randomly via a Random object's ints-stream
      * which specifies the integer range of the random integers. After that the stream keeps
