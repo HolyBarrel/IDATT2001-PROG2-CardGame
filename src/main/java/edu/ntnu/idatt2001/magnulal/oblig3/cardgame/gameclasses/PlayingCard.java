@@ -1,4 +1,7 @@
 package edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses;
+
+import java.util.Objects;
+
 /**
  * Represents a playing card. A playing card has a number (face) between
  * 1 and 13, where 1 is called an Ace, 11 = Knight, 12 = Queen and 13 = King.
@@ -51,6 +54,19 @@ public class PlayingCard {
     @Override
     public String toString() {
         return this.getAsString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayingCard that = (PlayingCard) o;
+        return suit == that.suit && face == that.face;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(suit, face);
     }
 }
 

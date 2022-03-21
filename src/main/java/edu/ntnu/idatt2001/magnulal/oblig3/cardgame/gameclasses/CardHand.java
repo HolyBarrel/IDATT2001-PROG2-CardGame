@@ -1,5 +1,8 @@
 package edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * A given card hand, with methods to check the values of the respective
  * PlayingCards of this hand
@@ -32,6 +35,47 @@ public class CardHand {
                 .distinct().toList().size()
                 == 1;
     }
+
+    /**
+     * A method utilizing a stream to return the total sum of the faces
+     * of ca card hand
+     * @return int sum of hand faces
+     */
+    public int getSumOfHand(){
+        return aCardHand.stream()
+                .map(PlayingCard::getFace)
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
+    /**
+     * A method returning all the cards with suit 'hearts' in the hand
+     * @return String of the found heart cards, or 'No Hearts' if there are
+     * none in the given hand
+     */
+    public String getCardsOfHearts(){
+        String cardsOfHearts = aCardHand.stream()
+                .filter(c -> c.getSuit() == 'H')
+                .map(PlayingCard::getAsString)
+                .toList()
+                .toString();
+        if(aCardHand.stream()
+                .filter(c -> c.getSuit() == 'H')
+                .map(PlayingCard::getAsString)
+                .toList().size() == 0) return "No Hearts";
+        return cardsOfHearts;
+    }
+
+    /**
+     * A method checking whether the hand contains a Queen of Spades
+     * @return true if it does, else false
+     */
+    public boolean hasQueenOfSpades(){
+        return aCardHand.stream()
+                .filter(c -> c.getSuit() == 'S' && c.getFace() == 12)
+                .toList().size() == 1;
+    }
+
     /**
      * Accessor method that returns this card hand in a list
      * @return ListPlayingCard aCardHand

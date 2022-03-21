@@ -73,6 +73,76 @@ public class CardHandTest {
             CardHand cardHand2 = new CardHand(testList);
             assertFalse(cardHand2.checkFlush());
         }
+
     }
+    @Nested
+    @DisplayName("Tests for GetSumOfHand-method of CardHand class")
+    public class TestsForGetSumOfHandMethod {
+        @Test
+        @DisplayName("Checking that the sum of the hand is returned as expected")
+        public void checkingThatTheGetSumOfHandReturnsExpectedSum() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('H', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('H', 3));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            assertEquals(19,cardHand2.getSumOfHand());
+        }
+    }
+    @Nested
+    @DisplayName("Tests for hasQueenOfSpades-method of CardHand class")
+    public class TestsForHasQueenOfSpades {
+        @Test
+        @DisplayName("Checking that the hasQueenOfSpades-method returns true when the hand has a queen of spades")
+        public void checkingThatTheHasQueenOfSpadesReturnsTrueWhenExpectedTo() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('H', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('S', 12));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            assertTrue(cardHand2.hasQueenOfSpades());
+        }
+        @Test
+        @DisplayName("Checking that the hasQueenOfSpades-method returns false when the hand has a queen of spades")
+        public void checkingThatTheHasQueenOfSpadesReturnsFalseWhenExpectedTo() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('H', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('H', 12));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            assertFalse(cardHand2.hasQueenOfSpades());
+        }
+    }
+    @Nested
+    @DisplayName("Tests for GetCardsOfHearts-method of CardHand class")
+    public class TestsForGetCardsOfHearts {
+        @Test
+        @DisplayName("Checking that the GetCardsOfHearts returns correct string")
+        public void checkingThatTheGetCardsOfHeartsReturnsCorrectString() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('H', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('H', 12));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            assertEquals("[H1, H12]", cardHand2.getCardsOfHearts());
+        }
+        @Test
+        @DisplayName("Checking that the GetCardsOfHearts returns 'No Hearts'")
+        public void checkingThatTheGetCardsOfHeartsReturnsNoHeartsWhenExpectedTo() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('C', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('S', 12));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            assertEquals("No Hearts", cardHand2.getCardsOfHearts());
+        }
+    }
+
+
 }
 
