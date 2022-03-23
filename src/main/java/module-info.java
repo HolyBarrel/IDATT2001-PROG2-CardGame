@@ -1,5 +1,5 @@
 /**
- * TODO:COMMENT
+ * TODO: comment
  */
 module edu.ntnu.idatt2001.magnulal.oblig3.cardgame.cardgame {
     requires javafx.controls;

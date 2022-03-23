@@ -86,6 +86,6 @@ public class CardHand {
 
     @Override
     public String toString() {
-        return "CardHand{" + aCardHand + '}';
+        return aCardHand.toString();
     }
 }

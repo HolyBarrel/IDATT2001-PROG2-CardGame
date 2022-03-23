@@ -142,7 +142,5 @@ public class CardHandTest {
             assertEquals("No Hearts", cardHand2.getCardsOfHearts());
         }
     }
-
-
 }
 
