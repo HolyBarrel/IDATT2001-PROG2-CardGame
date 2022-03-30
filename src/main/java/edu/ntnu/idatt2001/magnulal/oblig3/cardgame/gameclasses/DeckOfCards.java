@@ -16,17 +16,18 @@ import java.util.Random;
 public class DeckOfCards {
     //List of values for possible suits
     private static final char[] suit = {'S','H','D','C'};
-    //List of values for possible faces
+    //List of values for possible faces for each one of the suits
     private static final int[] faceValues = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-    private final ArrayList<PlayingCard> deckList = new ArrayList<>();
+    private final ArrayList<PlayingCard> deckList;
 
     /**
      * Constructor creating a deck of cards. Any deck has 52 playing cards
      * The constructor generates the deck by assigning all 13 of the values
      * in int[] faceValues to each of the different suits in char[] suit,
-     * thereby generating a total of 52 unique playing cards
+     * thereby generating a total of 52 unique playing cards.
      */
     public DeckOfCards() {
+        this.deckList = new ArrayList<>();
         for (char c: suit){
             for (int i: faceValues){
                 deckList.add(new PlayingCard(c,i));
@@ -35,7 +36,7 @@ public class DeckOfCards {
     }
     /**
      * The method picks n cards from the deck randomly via a Random object's ints-stream
-     * which specifies the integer range of the random integers. After that the stream keeps
+     * which specifies the integer range of the random integers. Then the stream keeps
      * a total of n (limit), unique (distinct) index-positions. These are then used to mapToObj of
      * the deckList, which gets the random hand.
      * @param n, is the amount of cards in the hand that is dealt
@@ -65,7 +66,7 @@ public class DeckOfCards {
     public String toString() {
         return "DeckOfCards{" +
                 deckList +
-                '}';
+                "}";
     }
 }
 

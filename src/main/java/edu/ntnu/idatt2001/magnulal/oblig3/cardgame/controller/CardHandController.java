@@ -16,6 +16,7 @@ import edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses.*;
  */
 public class CardHandController {
     private CardHand currentCardHand;
+    private DeckOfCards currentDeck;
     @FXML
     private Label cardsOfTheHand;
     @FXML
@@ -45,6 +46,7 @@ public class CardHandController {
         cardsOfHearts.setText("");
         queenOfSpades.setText("");
         flushLabel.setText("");
+        this.currentDeck = new DeckOfCards();
     }
 
     /**
@@ -99,7 +101,7 @@ public class CardHandController {
      */
     @FXML
     protected void dealHand(ActionEvent actionEvent) {
-        this.currentCardHand = new CardHand(new DeckOfCards().dealHand(5));
+        this.currentCardHand = new CardHand(currentDeck.dealHand(5));
         cardsOfTheHand.setText(currentCardHand.toString());
     }
 }

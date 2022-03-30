@@ -130,7 +130,9 @@ public class CardHandTest {
             testList.add(new PlayingCard('H', 12));
             testList.add(new PlayingCard('C', 8));
             CardHand cardHand2 = new CardHand(testList);
-            assertEquals("[H1, H12]", cardHand2.getCardsOfHearts());
+            //Testing GetCardsOfHearts of CardHand class, and therefore also the
+            // static method 'printCardHandFromListOfCardStrings' of CardHandView class
+            assertEquals("H1  H12  ", cardHand2.getCardsOfHearts());
         }
         @Test
         @DisplayName("Checking that the GetCardsOfHearts returns 'No Hearts'")
@@ -142,6 +144,23 @@ public class CardHandTest {
             testList.add(new PlayingCard('C', 8));
             CardHand cardHand2 = new CardHand(testList);
             assertEquals("No Hearts", cardHand2.getCardsOfHearts());
+        }
+    }
+    @Nested
+    @DisplayName("Tests for toString-method of CardHand class")
+    public class TestForToString {
+        @Test
+        @DisplayName("Checking that the toString method returns correct string")
+        public void checkingToStringReturnsAsExpected() {
+            List<PlayingCard> testList = new ArrayList<>();
+            testList.add(new PlayingCard('C', 1));
+            testList.add(new PlayingCard('C', 7));
+            testList.add(new PlayingCard('S', 12));
+            testList.add(new PlayingCard('C', 8));
+            CardHand cardHand2 = new CardHand(testList);
+            //Testing toString of CardHand class, and therefore also the
+            // static method 'printCardHand' of CardHandView class
+            assertEquals("C1  C7  S12  C8  ", cardHand2.toString());
         }
     }
 }

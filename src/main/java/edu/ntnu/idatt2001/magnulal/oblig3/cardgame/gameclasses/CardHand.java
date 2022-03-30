@@ -52,16 +52,15 @@ public class CardHand {
      * none in the given hand
      */
     public String getCardsOfHearts(){
-        String cardsOfHearts = aCardHand.stream()
+        List<String> cardsOfHearts = aCardHand.stream()
                 .filter(c -> c.getSuit() == 'H')
                 .map(PlayingCard::toString)
-                .toList()
-                .toString();
+                .toList();
         if(aCardHand.stream()
                 .filter(c -> c.getSuit() == 'H')
                 .map(PlayingCard::toString)
                 .toList().size() == 0) return "No Hearts";
-        return cardsOfHearts;
+        return CardHandView.printCardHandFromListOfCardStrings(cardsOfHearts);
     }
 
     /**
