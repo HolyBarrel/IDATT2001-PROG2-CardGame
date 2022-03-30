@@ -1,14 +1,13 @@
 package edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
+import edu.ntnu.idatt2001.magnulal.oblig3.cardgame.view.CardHandView;
+
+import java.util.List;
 /**
  * A given card hand, with methods to check the values of the respective
  * PlayingCards of this hand
- * @author ntnu _ further developed by ntnu.stud: magnulal
- * @since 2020-01-10
- * @version 2022-03-21 //TODO: UPDATE
+ * @author magnulal
+ * @version 2022-03-30
  */
 public class CardHand {
     private final List<PlayingCard> aCardHand;
@@ -38,13 +37,12 @@ public class CardHand {
 
     /**
      * A method utilizing a stream to return the total sum of the faces
-     * of ca card hand
+     * of a card hand
      * @return int sum of hand faces
      */
     public int getSumOfHand(){
         return aCardHand.stream()
-                .map(PlayingCard::getFace)
-                .mapToInt(Integer::intValue)
+                .mapToInt(PlayingCard::getFace)
                 .sum();
     }
 
@@ -56,12 +54,12 @@ public class CardHand {
     public String getCardsOfHearts(){
         String cardsOfHearts = aCardHand.stream()
                 .filter(c -> c.getSuit() == 'H')
-                .map(PlayingCard::getAsString)
+                .map(PlayingCard::toString)
                 .toList()
                 .toString();
         if(aCardHand.stream()
                 .filter(c -> c.getSuit() == 'H')
-                .map(PlayingCard::getAsString)
+                .map(PlayingCard::toString)
                 .toList().size() == 0) return "No Hearts";
         return cardsOfHearts;
     }
@@ -86,6 +84,6 @@ public class CardHand {
 
     @Override
     public String toString() {
-        return aCardHand.toString();
+        return CardHandView.printCardHand(this);
     }
 }

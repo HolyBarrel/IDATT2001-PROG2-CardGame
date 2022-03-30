@@ -8,20 +8,28 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * TODO:COMMENT
+ * Main class that inherits from Application
+ * The class has a start-method that shows the given stage
+ * @author magnulal
+ * @version 2022-03-30
  */
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Cardgame");
-        stage.setScene(scene);
-        stage.show();
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    Main.class.getResource("/edu.ntnu.idatt2001.magnulal.oblig3.cardgame/main-view.fxml")); //TODO: change root
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Cardgame");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException i){
+            i.printStackTrace();
+        }
     }
     /**
-     * TODO:COMMENT
-     * @param args comment
+     * Static void main-method to launch the Application
+     * @param args, list of arguments for the static void method
      */
     public static void main(String[] args) {
         launch();

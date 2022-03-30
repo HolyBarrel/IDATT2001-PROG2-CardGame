@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ntnu.idatt2001.magnulal.oblig3.cardgame.Controller">
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ntnu.idatt2001.magnulal.oblig3.cardgame.controller.CardHandController">
    <top>
-      <Label alignment="TOP_LEFT" nodeOrientation="LEFT_TO_RIGHT" text="Cardgame" textFill="#2600ff" BorderPane.alignment="CENTER">
+      <Label alignment="TOP_LEFT" nodeOrientation="LEFT_TO_RIGHT" text="Card Game" textFill="#323232" BorderPane.alignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
    </top>
@@ -23,10 +21,10 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label layoutX="28.0" layoutY="38.0" text="Sum of faces:" />
-            <Label layoutX="28.0" layoutY="65.0" text="Cards of Hearts:" />
-            <Label layoutX="28.0" layoutY="90.0" text="Flush:" />
-            <Label layoutX="28.0" layoutY="117.0" text="Queen of Spades:" />
+            <Label layoutX="28.0" layoutY="38.0" text="Sum of faces:" textFill="#000000cc" />
+            <Label layoutX="28.0" layoutY="65.0" text="Cards of Hearts:" textFill="#000000cc" />
+            <Label layoutX="28.0" layoutY="90.0" text="Flush:" textFill="#000000cc" />
+            <Label layoutX="28.0" layoutY="117.0" text="Queen of Spades:" textFill="#000000cc" />
             <Label id="sumOfFaces" fx:id="sumOfFaces" layoutX="198.0" layoutY="38.0" text="sum" />
             <Label fx:id="cardsOfHearts" layoutX="198.0" layoutY="65.0" text="String" />
             <Label fx:id="flushLabel" layoutX="198.0" layoutY="90.0" text="yes/no" />
@@ -35,18 +33,18 @@
       </AnchorPane>
    </bottom>
    <left>
-      <AnchorPane id="cardHandField" fx:id="displayField" prefHeight="157.0" prefWidth="447.0" style="-fx-background-color: #D3D3D3;" BorderPane.alignment="CENTER">
+      <AnchorPane id="cardHandField" fx:id="displayField" prefHeight="157.0" prefWidth="470.0" style="-fx-background-color: #D3D3D3;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="cardsOfTheHand" layoutX="34.0" layoutY="78.0" text="String representation of all cards">
                <font>
                   <Font size="25.0" />
                </font></Label>
-            <Text fill="RED" layoutX="34.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Card Hand:" />
+            <Text fill="#575757" layoutX="34.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Card Hand:" />
          </children>
       </AnchorPane>
    </left>
    <right>
-      <Button id="btnDealHand" fx:id="btnDealHand" mnemonicParsing="false" onAction="#dealHand" prefHeight="94.0" prefWidth="144.0" text="Deal Card Hand" BorderPane.alignment="CENTER">
+      <Button id="btnDealHand" fx:id="btnDealHand" mnemonicParsing="false" onAction="#dealHand" prefHeight="58.0" prefWidth="153.0" text="Deal Card Hand" BorderPane.alignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>

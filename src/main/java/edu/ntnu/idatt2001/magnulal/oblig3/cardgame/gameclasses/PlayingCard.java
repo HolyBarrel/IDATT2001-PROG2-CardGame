@@ -8,7 +8,7 @@ import java.util.Objects;
  * The card can also be one of 4 suits: Spade, Heart, Diamonds and Clubs.
  * @author ntnu _ further developed by ntnu.stud: magnulal
  * @since 2020-01-10
- * @version 2022-03-21
+ * @version 2022-03-30
  */
 public class PlayingCard {
 
@@ -31,7 +31,7 @@ public class PlayingCard {
      * A 4 of hearts is returned as the string "H4".
      * @return the suit and face of the card as a string
      */
-    public String getAsString() {
+    private String getAsString() {
         return String.format("%s%s", suit, face);
     }
 

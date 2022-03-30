@@ -52,13 +52,14 @@ public class CardHandTest {
             assertEquals(2, Math.round(x/=100));
         }
         @Test
-        @DisplayName("Checking that the checkFlush-method catches a four card hand flush as a flush")
+        @DisplayName("Checking that the checkFlush-method catches a five card hand flush as a flush")
         public void checkingThatTheCheckFlushReturnsTrueWhenTheHandIsAFlush() {
             List<PlayingCard> testList = new ArrayList<>();
             testList.add(new PlayingCard('C', 1));
             testList.add(new PlayingCard('C', 7));
             testList.add(new PlayingCard('C', 3));
             testList.add(new PlayingCard('C', 8));
+            testList.add(new PlayingCard('C', 10));
             CardHand cardHand2 = new CardHand(testList);
             assertTrue(cardHand2.checkFlush());
         }
@@ -86,8 +87,9 @@ public class CardHandTest {
             testList.add(new PlayingCard('C', 7));
             testList.add(new PlayingCard('H', 3));
             testList.add(new PlayingCard('C', 8));
+            testList.add(new PlayingCard('C', 5));
             CardHand cardHand2 = new CardHand(testList);
-            assertEquals(19,cardHand2.getSumOfHand());
+            assertEquals(24,cardHand2.getSumOfHand());
         }
     }
     @Nested

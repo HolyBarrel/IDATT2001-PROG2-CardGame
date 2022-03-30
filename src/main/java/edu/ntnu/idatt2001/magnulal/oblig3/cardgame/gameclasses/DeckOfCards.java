@@ -3,7 +3,6 @@ package edu.ntnu.idatt2001.magnulal.oblig3.cardgame.gameclasses;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Represents a deck containing a list of 52 playing cards (class 'PlayingCard')
@@ -12,8 +11,7 @@ import java.util.stream.Collectors;
  * The constructor utilizes these lists to generate an ArrayList with
  * 52 playing cards (ArrayListPlayingCard deckList)
  * @author ntnu _ further developed by ntnu.stud: magnulal
- * @since 2020-01-10
- * @version 2022-03-21
+ * @version 2022-03-30
  */
 public class DeckOfCards {
     //List of values for possible suits
@@ -53,7 +51,7 @@ public class DeckOfCards {
                 .distinct()
                 .limit(n)
                 .mapToObj(deckList::get)
-                .collect(Collectors.toList());
+                .toList();
     }
     /**
      * Accessor method that returns this deck of cards in an ArrayList with PlayingCards
@@ -62,6 +60,7 @@ public class DeckOfCards {
     public ArrayList<PlayingCard> getDeckList() {
         return deckList;
     }
+
     @Override
     public String toString() {
         return "DeckOfCards{" +
