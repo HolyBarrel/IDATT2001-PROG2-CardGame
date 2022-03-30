@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(
-                    Main.class.getResource("/edu.ntnu.idatt2001.magnulal.oblig3.cardgame/main-view.fxml")); //TODO: change root
+                    Main.class.getResource("/edu.ntnu.idatt2001.magnulal.oblig3.cardgame/main-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Cardgame");
             stage.setScene(scene);
